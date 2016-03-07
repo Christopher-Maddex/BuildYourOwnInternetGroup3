@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Oswald|Muli');
+@import url('https://fonts.googleapis.com/css?family=Droid Sans|Droid Sans');
 /*!
- *@autor emil
+ * @author emil
 */
 /* Add custom CSS classes here 
  * 
@@ -1082,7 +1082,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: Muli;
+  font-family: "Droid Sans";
   font-size: 14px;
   line-height: 1.42857143;
   color: #ffffff;
@@ -1184,7 +1184,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: Oswald;
+  font-family: "Droid Sans";
   font-weight: 500;
   line-height: 1.1;
   color: inherit;
@@ -5821,7 +5821,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: Muli;
+  font-family: "Droid Sans";
   font-size: 12px;
   font-weight: normal;
   line-height: 1.4;
@@ -5928,7 +5928,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: Muli;
+  font-family: "Droid Sans";
   font-size: 14px;
   font-weight: normal;
   line-height: 1.42857143;
