@@ -1,3 +1,5 @@
+<!DOCTYPE HTML>
+
 <html><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -5,13 +7,21 @@
     <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="stylesheet.css" rel="stylesheet" type="text/css">
+    <!-- http://www.myersdaily.org/joseph/javascript/md5.js -->
+    <script src="md5.js"></script>
+    <!-- include BYOI jQuery plugin -->
+    <script src="byoi.js"></script>
+    <!-- include BYOI configuration -->
+    <script src="config.js"></script>
+    <!-- include all the button handlers and websocket connection -->
+    <script src="bindings.js"></script>
   </head><body>
     <div class="section">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <div class="alert alert-dismissable alert-success">
-              <strong>Well done!</strong>You successfully read this important alert message.</div>
+            <div class="alert alert-dismissable alert-success" id="systemMessage">
+              <strong>Well done! </strong>You successfully read this important alert message.</div>
           </div>
         </div>
       </div>
@@ -19,33 +29,41 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <img src="rsz_placeholder.png" class="img-responsive">
+              <div id="main">
+            <div id="messageList">
+                <strong>
+                    Messages sent and received
+                </strong>
+            </div><!-- #messageList -->
+        </div><!-- #main -->
               <div class="col-xs-2">
                 <label for="nodeSelect"></label>
-                <input class="form-control" id="nodeSelect" type="text" placeholder="Broadcast #">
+                <input class="form-control" type="number" id="recipient" placeholder="Broadcast №">
               </div>
               <div class="col-md-offset col-md-10">
                 <form role="form">
                   <div class="form-group">
                     <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Enter message here">
+                      <input type="text" class="form-control" id="msg" placeholder="Enter message here">
                       <span class="input-group-btn">
-                        <a class="btn btn-success" type="submit">Send</a>
+                        <a class="btn btn-success" id="sendButton" type="submit">Send</a>
                       </span>
                     </div>
                   </div>
                 </form>
               </div>
               <div class="col-md-10">
-                <a class="btn btn-primary">Add</a>
-                <a class="btn btn-primary">Combine</a>
-                <a class="btn btn-primary">Split</a>
-                <a class="btn btn-primary">Add Checksum</a>
-                <a class="btn btn-primary">Verify Checksum</a>
-                <a class="btn btn-primary">Encrypt</a>
-                <a class="btn btn-primary">Decrypt</a>
-                <a class="btn btn-primary">Add Randomn Number</a>
-                <a class="btn btn-primary">Delete</a>
+                <a class="btn btn-primary" id="addButton">Add</a>
+                <a class="btn btn-primary" id="combineButton">Combine</a>
+                <a class="btn btn-primary" id="splitButton">Split</a>
+                <a class="btn btn-primary" id="checksumButton">Add Checksum</a>
+                <a class="btn btn-primary" id="verifyButton">Verify Checksum</a>
+                <a class="btn btn-primary" id="encryptButton">Encrypt</a>
+                <a class="btn btn-primary" id="decryptButton">Decrypt</a>
+                <a class="btn btn-primary" id="randomButton">Add Random Number</a>
+                <a class="btn btn-primary" id="deleteButton">Delete</a>
+                <a class="btn btn-primary" id="connectButton">Connect</a>
+                <a class="btn btn-primary" id="closeButton">Disconnect</a>
               </div>
             </div>
           </div>
