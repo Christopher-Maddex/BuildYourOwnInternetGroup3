@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html><head>
+<!DOCTYPE HTML>
+<html>
+  
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
+    rel="stylesheet" type="text/css">
     <link href="stylesheet.css" rel="stylesheet" type="text/css">
     <!-- http://www.myersdaily.org/joseph/javascript/md5.js -->
     <script src="md5.js"></script>
@@ -14,12 +17,13 @@
     <script src="config.js"></script>
     <!-- include all the button handlers and websocket connection-->
     <script src="bindings.js"></script>
-    <script src="sortDivMessageList.js"></script>
-    <script src="jquery.mjs.nestedSortable.js"></script>
-  </head><body>
-    <div class="alert alert-dismissable alert-info" id="systemMessage">
-      You need to connect first, so hit the Connect button.
-      <a class="btn btn-primary" id="connectButton">Connect</a>
+    <script src="charCounter.js"></script>
+  </head>
+  
+  <body>
+    <div class="alert alert-dismissable alert-info" id="systemMessage">You need to connect first, so hit the Connect button.
+      <a class="btn btn-primary"
+      id="connectButton">Connect</a>
     </div>
     <div class="section">
       <div class="container">
@@ -37,41 +41,51 @@
             </div>
           </div>
           <div class="col-md-4">
-            <a class="btn btn-info" id="combineButton">Combine</a><br>
-            <a class="btn btn-success" id="verifyButton">Verify Checksum</a><br>
-            <a class="btn btn-warning" id="decryptButton">Decrypt</a><br>
+            <a class="btn btn-info" id="combineButton">Combine</a>
             <br>
-            <a class="btn btn-primary" id="addButton">Add</a><br>
-            <a class="btn btn-primary" id="deleteButton">Delete</a><br>
+            <a class="btn btn-success" id="verifyButton">Verify Checksum</a>
+            <br>
+            <a class="btn btn-warning" id="decryptButton">Decrypt</a>
+            <br>
+            <br>
+            <a class="btn btn-primary" id="addButton">Add</a>
+            <br>
+            <a class="btn btn-primary" id="deleteButton">Delete</a>
+            <br>
             <br>
             <a class="btn btn-danger" id="closeButton">Disconnect</a>
           </div>
         </div>
       </div>
-      </div>
-      <div class="section">
-        <div class="container">
-          <div class="row">
-            <div class="col-xs-2">
-              <input class="form-control" type="number" id="recipient" placeholder="Broadcast №">
+    </div>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-2">
+            <input class="form-control" type="number" id="recipient" placeholder="Broadcast №"
+            value="0">
+          </div>
+          <div class="form-group-xs-2">
+            <div class="input-group">
+              <input type="text" class="form-control" id="msg" placeholder="Enter message here">
+              <!--<div class="result">0 chars</div> -->
+              <span class="input-group-btn">
+                <a class="btn btn-primary" id="sendButton" type="submit">Send</a>
+                <a class="btn btn-warning" id="charLength">40 characters remaining</a>
+              </span>
             </div>
-            <div class="form-group">
-              <div class="input-group">
-                <input type="text" class="form-control" id="msg" placeholder="Enter message here">
-                <span class="input-group-btn">
-                  <a class="btn btn-primary" id="sendButton" type="submit">Send</a>
-                </span>
-              </div>
-              <div class="row"> 
-                <div class="center">
-                  <a class="btn btn-info" id="splitButton">Split</a>
-                  <a class="btn btn-success" id="checksumButton">Add Checksum</a>
-                  <a class="btn btn-warning" id="encryptButton">Encrypt</a>
-                  <a class="btn btn-primary" id="randomButton">Add Random Number</a>
-                </div>
+            <div class="row">
+              <div class="center">
+                <a class="btn btn-info" id="splitButton">Split</a>
+                <a class="btn btn-success" id="checksumButton">Add Checksum</a>
+                <a class="btn btn-warning" id="encryptButton">Encrypt</a>
+                <a class="btn btn-primary" id="randomButton">Add Random Number</a>
               </div>
             </div>
           </div>
         </div>
       </div>
-</body></html>
+    </div>
+  </body>
+
+</html>
