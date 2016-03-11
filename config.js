@@ -1,6 +1,7 @@
 $(document).ready(function() {
     //this file contains only the default configurations for the BYOI object
     $('#loggedInButtons').hide();
+    $('#messageList').sortable();
     $('#main').hide();
     if (! ("WebSocket" in window)) {
         $('#sidebar').hide();
@@ -25,6 +26,7 @@ $(document).ready(function() {
                 } else if ( type == 'TASK' ){
                     //react in a meaningful way :)
                 }
+                $('#messageList').sortable();
             }, 
             // called when the connection to the server fails
             onConnectionError: function(){
