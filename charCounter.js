@@ -7,7 +7,7 @@ $(document).ready(function(){
 			$("#charLength").css('background-color', 'red');
 			$("#charLength").text(-actualChars + " too many characters");
 		} else { 
-			$("#charLength").css('background-color', '#ec971f');
+			$("#charLength").css('background-color', '#f0ad4e');
 			$("#charLength").text(actualChars + " characters remaining");
 		}
 	});
