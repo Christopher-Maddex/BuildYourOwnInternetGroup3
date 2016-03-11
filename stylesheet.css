@@ -259,6 +259,19 @@ th {
   src: url('../fonts/glyphicons-halflings-regular.eot');
   src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
+
+.center {
+  margin: 0 auto;
+  width: 35%
+}
+
+.BYOI-selected{
+    background:#009933 !important;
+}
+
+.BYOI-last-selected{
+    background:#66ff66 !important;
+}
 .glyphicon {
   position: relative;
   top: 1px;
@@ -3161,8 +3174,8 @@ fieldset[disabled] .btn-success.active {
 }
 .btn-info {
   color: #ffffff;
-  background-color: #248057;
-  border-color: #1e6c49;
+  background-color: #0000cc;
+  border-color: #0000cc;
 }
 .btn-info:hover,
 .btn-info:focus,
@@ -3171,8 +3184,8 @@ fieldset[disabled] .btn-success.active {
 .btn-info.active,
 .open > .dropdown-toggle.btn-info {
   color: #ffffff;
-  background-color: #19583c;
-  border-color: #113c29;
+  background-color: #000099;
+  border-color: #000099;
 }
 .btn-info:active,
 .btn-info.active,

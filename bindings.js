@@ -152,7 +152,7 @@ $(document).ready(function() {
         // tag with the "text" class.
         var html = '<div><span class="text">'+$('#msg').val()+'</span></div>';
         // sent message to the server
-        $(html).BYOIMessage().send($('#recipient').val()).css('background', 'gold');
+        $(html).BYOIMessage().send($('#recipient').val()).css('background');
         $('#messageList').getSelectedMessages().toggleSelectMessage();
     });
 
