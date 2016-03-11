@@ -12,12 +12,15 @@
     <script src="byoi.js"></script>
     <!-- include BYOI configuration -->
     <script src="config.js"></script>
-    <!-- include all the button handlers and websocket connection
-    -->
+    <!-- include all the button handlers and websocket connection-->
     <script src="bindings.js"></script>
+    <script src="sortDivMessageList.js"></script>
+    <script src="jquery.mjs.nestedSortable.js"></script>
   </head><body>
     <div class="alert alert-dismissable alert-info" id="systemMessage">
-      <strong>Well done! </strong>You successfully read this important alert message.</div>
+      You need to connect first, so hit the Connect button.
+      <a class="btn btn-primary" id="connectButton">Connect</a>
+    </div>
     <div class="section">
       <div class="container">
         <div class="row">
@@ -34,27 +37,14 @@
             </div>
           </div>
           <div class="col-md-4">
-            <a class="btn btn-primary" id="addButton">Add</a>
+            <a class="btn btn-info" id="combineButton">Combine</a><br>
+            <a class="btn btn-success" id="verifyButton">Verify Checksum</a><br>
+            <a class="btn btn-warning" id="decryptButton">Decrypt</a><br>
             <br>
-            <a class="btn btn-primary" id="combineButton">Combine</a>
+            <a class="btn btn-primary" id="addButton">Add</a><br>
+            <a class="btn btn-primary" id="deleteButton">Delete</a><br>
             <br>
-            <a class="btn btn-primary" id="splitButton">Split</a>
-            <br>
-            <a class="btn btn-primary" id="checksumButton">Add Checksum</a>
-            <br>
-            <a class="btn btn-primary" id="verifyButton">Verify Checksum</a>
-            <br>
-            <a class="btn btn-primary" id="encryptButton">Encrypt</a>
-            <br>
-            <a class="btn btn-primary" id="decryptButton">Decrypt</a>
-            <br>
-            <a class="btn btn-primary" id="randomButton">Add Random Number</a>
-            <br>
-            <a class="btn btn-primary" id="deleteButton">Delete</a>
-            <br>
-            <a class="btn btn-primary" id="connectButton">Connect</a>
-            <br>
-            <a class="btn btn-primary" id="closeButton">Disconnect</a>
+            <a class="btn btn-danger" id="closeButton">Disconnect</a>
           </div>
         </div>
       </div>
@@ -69,13 +59,19 @@
               <div class="input-group">
                 <input type="text" class="form-control" id="msg" placeholder="Enter message here">
                 <span class="input-group-btn">
-                  <a class="btn btn-success" id="sendButton" type="submit">Send</a>
+                  <a class="btn btn-primary" id="sendButton" type="submit">Send</a>
                 </span>
+              </div>
+              <div class="row"> 
+                <div class="center">
+                  <a class="btn btn-info" id="splitButton">Split</a>
+                  <a class="btn btn-success" id="checksumButton">Add Checksum</a>
+                  <a class="btn btn-warning" id="encryptButton">Encrypt</a>
+                  <a class="btn btn-primary" id="randomButton">Add Random Number</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-  
-
 </body></html>

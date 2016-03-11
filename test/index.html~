@@ -1,0 +1,80 @@
+<html><head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="stylesheet.css" rel="stylesheet" type="text/css">
+        <!-- http://www.myersdaily.org/joseph/javascript/md5.js -->
+        <script src="md5.js"></script>
+        <!-- include BYOI jQuery plugin -->
+        <script src="byoi.js"></script>
+        <!-- include BYOI configuration -->
+        <script src="config.js"></script>
+        <!-- include all the button handlers and websocket connection
+        -->
+        <script src="bindings.js"></script>
+    </head><body>
+        <div class="alert alert-dismissable alert-info" id="systemMessage">
+            <strong>Well done!</strong>You successfully read this important alert message.</div>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">Message Box</div>
+                            <div class="panel-body" style="max-height: 150; overflow-y: scroll;">
+                                <div id="main">
+                                    <div id="messageList" style="max-height: 150;"></div>
+                                    <!-- #messageList -->
+                                </div>
+                                <!-- #main -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="btn btn-primary" id="addButton">Add</a>
+                        <br>
+                        <a class="btn btn-warning" id="combineButton">Combine</a>
+                        <br>
+                        
+                        <br>
+                        
+                        <br>
+                        <a class="btn btn-info" id="verifyButton">Verify Checksum</a>
+                        <br>
+                        
+                        <br>
+                        <a class="btn btn-danger" id="decryptButton">Decrypt</a>
+                        <br>
+                        <a class="btn btn-primary" id="randomButton">Add Random Number</a>
+                        <br>
+                        <a class="btn btn-primary" id="deleteButton">Delete</a>
+                        <br>
+                        <a class="btn btn-primary" id="connectButton">Connect</a>
+                        <br>
+                        <a class="btn btn-primary" id="closeButton">Disconnect</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <input class="form-control" type="number" id="recipient" placeholder="Broadcast №">
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="msg" placeholder="Enter message here">
+                                <span class="input-group-btn">
+                                    <a class="btn btn-success" id="sendButton" type="submit">Send</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><div class="section"><div class="container"><div class="row"><div class="col-md-4"><a class="btn btn-warning" id="splitButton">Split</a></div><div class="col-md-4"><a class="btn btn-danger" id="encryptButton">Encrypt</a></div><div class="col-md-4"><a class="btn btn-info" id="checksumButton">Add Checksum</a></div></div></div></div>
+    
+
+</body></html>
