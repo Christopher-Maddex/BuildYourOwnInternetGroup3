@@ -1,0 +1,104 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js">
+</script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="stylesheet.css" rel="stylesheet" type="text/css">
+    <!-- http://www.myersdaily.org/joseph/javascript/md5.js -->
+    <script src="md5.js"></script>
+    <!-- include BYOI jQuery plugin -->
+    <script src="byoi.js"></script>
+    <!-- include BYOI configuration -->
+    <script src="config.js"></script>
+    <!-- include all the button handlers and websocket connection-->
+    <script src="bindings.js"></script>
+    <script src="charCounter.js"></script>
+  </head><body>
+    <div class="alert alert-dismissable alert-info" id="systemMessage">You need to connect first, so hit the Connect button.
+      <a class="btn btn-danger" id="connectButton">Connect</a>
+    </div>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="panel panel-primary">
+              <div class="panel-heading">Message Box</div>
+              <div class="panel-body">
+                <div id="main">
+                  <div id="messageList" style="max-height: 150;"></div>
+                  <!-- #messageList -->
+                </div>
+                <!-- #main -->
+              </div>
+            </div>
+            <div class="btn-group btn-group-sm">
+              <a class="btn btn-info dropdown-toggle" data-toggle="dropdown"> Message Length Tools<span class="fa fa-caret-down"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li>
+                  <a class="btn btn-info" id="combineButton">Combine</a>
+                  <a class="btn btn-info" id="splitButton">Split</a>
+                </li>
+              </ul>
+            </div>
+            <div class="btn-group btn-group-sm">
+              <a class="btn btn-success dropdown-toggle" data-toggle="dropdown"> Checksum Tools <span class="fa fa-caret-down"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li>
+                  <a class="btn btn-success" id="verifyButton">Verify Checksum</a>
+                  <a class="btn btn-success" id="checksumButton">Add Checksum</a>
+                </li>
+              </ul>
+            </div>
+            <div class="btn-group btn-group-sm">
+              <a class="btn btn-warning dropdown-toggle" data-toggle="dropdown"> Security Tools <span class="fa fa-caret-down"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li>
+                  <a class="btn btn-warning" id="encryptButton">Encrypt</a>
+                  <a class="btn btn-warning" id="decryptButton">Decrypt</a>
+                </li>
+              </ul>
+            </div>
+            <div class="btn-group btn-group-sm">
+              <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> Adding/Deleting <span class="fa fa-caret-down"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li>
+                  <a class="btn btn-primary" id="addButton">Add</a>
+                  <a class="btn btn-primary" id="deleteButton">Delete</a>
+                </li>
+              </ul>
+            </div>
+            <a class="btn btn-primary btn-sm" id="randomButton">Add Random Number</a>
+            <a class="btn btn-danger btn-sm" id="closeButton">Disconnect</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-2 col-md-2">
+            <input class="form-control" type="number" id="recipient" placeholder="Broadcast №" value="0">
+          </div>
+          <div class="form-group-xs-2">
+            <div class="input-group">
+              <input type="text" class="form-control" id="msg" placeholder="Enter message here">
+              <!--<div class="result">0 chars</div> -->
+              <span class="input-group-btn">
+                <a class="btn btn-primary" id="sendButton" type="submit">Send</a>
+                <a class="btn btn-warning" id="charLength">40 characters remaining</a>
+              </span>
+            </div>
+            <div class="row">
+              <div class="center"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+</body></html>

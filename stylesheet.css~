@@ -8,10 +8,6 @@ html {
 body {
   margin: 0;
 }
-
-#systemMessage {
-  color: #FFF;
-}
 article,
 aside,
 details,

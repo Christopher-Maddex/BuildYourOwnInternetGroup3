@@ -24,7 +24,7 @@
   
   <body>
     <div class="alert alert-dismissable alert-info" id="systemMessage">You need to connect first, so hit the Connect button.
-      <a class="btn btn-danger"
+      <a class="btn btn-primary"
       id="connectButton">Connect</a>
     </div>
     <div class="section">
