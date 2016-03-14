@@ -29,11 +29,28 @@
     </div>
     <div class="section">
       <div class="container">
+	  <ul class="nav nav-tabs">
+		<li class="active"><a data-toggle="tab" href="#welcome">Welcome</a></li>
+		<li><a data-toggle="tab" href="#tasks">Tasks</a></li>
+		<li><a data-toggle="tab" href="#status">Status</a></li>
+	  </ul>
+	  <div class="tab-content">
+		<div id="welcome" class="tab-pane fade in active">
+		  <p>Instructions on how to use and what to do.</p>
+		</div>
+		<div id="tasks" class="tab-pane fade">
+		  <p>Current tasks.</p>
+		</div>
+		<div id="status" class="tab-pane fade">
+		  <p>Status report.</p>
+		</div>
+	  </div>
         <div class="row">
           <div class="col-md-8">
             <div class="panel panel-primary">
               <div class="panel-heading">Message Box</div>
               <div class="panel-body">
+				  
                 <div id="main">
                   <div id="messageList" style="max-height: 150;"></div>
                   <!-- #messageList -->
