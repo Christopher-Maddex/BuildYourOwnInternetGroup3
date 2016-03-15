@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"> </script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
+    rel="stylesheet" type="text/css">
+    <link href="stylesheet.css" rel="stylesheet" type="text/css">
+    <!-- http://www.myersdaily.org/joseph/javascript/md5.js -->
+    <script src="md5.js"></script>
+    <!-- include BYOI jQuery plugin -->
+    <script src="byoi.js"></script>
+    <!-- include BYOI configuration -->
+    <script src="config.js"></script>
+    <!-- include all the button handlers and websocket connection-->
+    <script src="bindings.js"></script>
+    <script src="charCounter.js"></script>
+  </head>
+  
+  <body>
+    <div class="alert alert-dismissable alert-info" id="systemMessage">You need to connect first, so hit the Connect button.
+      <a class="btn btn-primary"
+      id="connectButton">Connect</a>
+    </div>
+    <div class="section">
+      <div class="container">
+	  <ul class="nav nav-tabs">
+		<li class="active"><a data-toggle="tab" href="#welcome">Welcome</a></li>
+		<li><a data-toggle="tab" href="#task">Task</a></li>
+		<li><a data-toggle="tab" href="#status">Status</a></li>
+	  </ul>
+	  <div class="tab-content">
+		<div id="welcome" class="tab-pane fade in active">
+		  <p>Welcome to Build Your Own Internet.</p>
+		</div>
+		<div id="task" class="tab-pane fade">
+		  <p>No tasks currently assigned. </p>
+		</div>
+		<div id="status" class="tab-pane fade">
+		  <p>Status report.</p>
+		</div>
+	  </div>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="panel panel-primary">
+              <div class="panel-heading">Message Box</div>
+              <div class="panel-body">
+				  
+                <div id="main">
+                  <div id="messageList" style="max-height: 150;"></div>
+                  <!-- #messageList -->
+                </div>
+                <!-- #main -->
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <a class="btn btn-primary" id="combineButton">Combine</a>
+            <br>
+            <a class="btn btn-primary" id="verifyButton">Verify Checksum</a>
+            <br>
+            <a class="btn btn-primary" id="decryptButton">Decrypt</a>
+            <br>
+            <br>
+            <a class="btn btn-primary" id="addButton">Add</a>
+            <br>
+            <a class="btn btn-primary" id="deleteButton">Delete</a>
+            <br>
+            <br>
+            <a class="btn btn-primary" id="closeButton">Disconnect</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-2">
+            <input class="form-control" type="number" id="recipient" placeholder="Broadcast №"
+            value="0">
+          </div>
+          <div class="form-group-xs-2">
+            <div class="input-group">
+              <input type="text" class="form-control" id="msg" placeholder="Enter message here">
+              <!--<div class="result">0 chars</div> -->
+              <span class="input-group-btn">
+                <a class="btn btn-primary" id="sendButton" type="submit">Send</a>
+                <a class="btn btn-warning" id="charLength">40 characters remaining</a>
+              </span>
+            </div>
+            <div class="row">
+              <div class="center">
+                <a class="btn btn-primary" id="splitButton">Split</a>
+                <a class="btn btn-primary" id="checksumButton">Add Checksum</a>
+                <a class="btn btn-primary" id="encryptButton">Encrypt</a>
+                <a class="btn btn-primary" id="randomButton">Add Random Number</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
