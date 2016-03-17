@@ -143,14 +143,13 @@ function chunker(text, len){
                     setCookie("name", BYOI.myName);
                     BYOI.systemMessage("new game join");
                 }
-                html = 'Node Number:  '+BYOI.myNode+' | Node name: <span class="text">'+BYOI.myName+' | Session ID: ' + BYOI.mysession;
-				document.getElementById('#task').html = html;
-
-                //metaData = {
-                //    'node': BYOI.myNode, 
-                //    'text': BYOI.myName,
-                //    'session': BYOI.mySession
-                //};
+				$("#welcomeP").text('Node Number: '+BYOI.myNode+' | Node name: '+BYOI.myName);
+                html = '<div class="received"><span class="connected">Node Number:  '+BYOI.myNode+'</span> | Node name: <span class="text">'+BYOI.myName+'</span></div>';
+                metaData = {
+                    'node': BYOI.myNode, 
+                    'text': BYOI.myName,
+                    'session': BYOI.mySession
+                };
             }
 
             if (type == 'PACKET') {
@@ -164,21 +163,21 @@ function chunker(text, len){
                 }
                 metaData['text'] = text;
                 metaData['from'] = from;
-				// create a new message from the received data
-				var msg = $(html).BYOIMessage(metaData)
-					.relayMessage(); // relay the message to all message handlers
-				// call the hook
-				BYOI.onMessageReceived(type, msg);
             }
             if (type == 'TASK') {
                 console.log(received);
-				document.getElementById('#task').html = received.task;
-                //var task = received.task;
-                //html = '<div class="task">Task: <span class="text"> ' +task+ '</span></div>';
-                //metaData = {
-                //    'text':task
-                //};
+                var task = received.task;
+				$("#taskP").text('Current task: ' + task);
+                html = '<div class="task">Task: <span class="text"> ' +task+ '</span></div>';
+                metaData = {
+                    'text':task
+                };
             }
+            // create a new message from the received data
+            var msg = $(html).BYOIMessage(metaData)
+                .relayMessage(); // relay the message to all message handlers
+            // call the hook
+            BYOI.onMessageReceived(type, msg);
         };
 
         BYOI.connection.onerror = function (e) {
