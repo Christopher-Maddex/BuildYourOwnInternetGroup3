@@ -11,4 +11,7 @@ $(document).ready(function(){
 			$("#charLength").text(actualChars + " characters remaining");
 		}
 	});
+	$("#taskTab").click(function(){
+	  $(this).css({ 'color': 'green', 'font-weight': 'normal'});
+	});
 });

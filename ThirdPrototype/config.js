@@ -25,7 +25,6 @@ $(document).ready(function() {
                     //react in a meaningful way :)
                 } else if ( type == 'TASK' ){
                     //react in a meaningful way :)
-					document.getElementById('#task').html = msg;
                 }
                 $('#messageList').sortable();
             }, 
