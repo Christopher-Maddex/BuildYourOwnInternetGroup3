@@ -162,20 +162,21 @@ function chunker(text, len){
                     html = '<div class="received"><span class="node"> '+from+'</span> : <span class="text">'+text+'</span></div>';
                 }
                 metaData['text'] = text;
-                metaData['from'] = from;
+				metaData['from'] = from;
+				// create a new message from the received data
+				var msg = $(html).BYOIMessage(metaData)
+					.relayMessage(); // relay the message to all message handlers
             }
             if (type == 'TASK') {
                 console.log(received);
                 var task = received.task;
 				$("#taskP").text('Current task: ' + task);
+				$("#taskTab").css({ 'color': 'red', 'font-weight': 'bold'});
                 html = '<div class="task">Task: <span class="text"> ' +task+ '</span></div>';
                 metaData = {
                     'text':task
                 };
             }
-            // create a new message from the received data
-            var msg = $(html).BYOIMessage(metaData)
-                .relayMessage(); // relay the message to all message handlers
             // call the hook
             BYOI.onMessageReceived(type, msg);
         };
