@@ -41,7 +41,9 @@ $(document).ready(function() {
             },
             // called after the current client sends a message to the
             // server
-            onSend: function(msg){},
+            onSend: function(msg){
+				$('#msg').val('');
+			},
         });
     }
 
